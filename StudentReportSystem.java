@@ -7,7 +7,7 @@ public class StudentReportSystem {
             Scanner sc = new Scanner(System.in);
 
             try {
-                // === Input Student Details ===
+                
                 System.out.print("Enter Student Name: ");
                 String name = sc.nextLine();
 
@@ -17,14 +17,14 @@ public class StudentReportSystem {
                 System.out.print("Enter Marks: ");
                 double marks = Double.parseDouble(sc.nextLine()); // handle input as double
 
-                // === Save to File using BufferedWriter ===
+                
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
                     writer.write(name + "," + rollNumber + "," + marks);
                     writer.newLine();
                     System.out.println("Student details saved successfully!\n");
                 }
 
-                // === Read from File using BufferedReader ===
+                
                 System.out.println("---- Student Records ----");
                 try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
                     String line;
@@ -43,4 +43,5 @@ public class StudentReportSystem {
             }
         }
     }
+
 
